@@ -3,8 +3,10 @@ kind: Service
 metadata:
   name: rollouts-test-service
   labels:
-    run: rollouts-test
+    app: rollouts-test
 spec:
   ports:
   - port: 8080
     protocol: TCP
+  selector:
+    app: rollouts-test
