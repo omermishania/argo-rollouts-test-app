@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: rollouts-demo
+spec:
+  replicas: 3
+  strategy:
+    canary:
+      steps:
+      - setWeight: 20
+      - pause: {} # Pauses the update until manually resuming for testing perposes
+      - setWeight: 40
+      - pause: {duration: 1m}
+      - setWeight: 60
+      - pause: {duration: 1m}
+      - setWeight: 80
+      - pause: {duration: 1m}
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: rollouts-demo
+  template:
+    metadata:
+      labels:
+        app: rollouts-demo
+    spec:
+      containers:
+      - name: rollouts-test-app
+        image: "{{ .Values.rollouts_test_app_image.repository }}/{{ .Values.rollouts_test_app_image.image }}:{{ .Values.rollouts_test_app_image.tag }}"
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
