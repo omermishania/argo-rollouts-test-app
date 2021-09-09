@@ -8,4 +8,4 @@ spec:
     kind: Service
     name: rollouts-test-service
   port:
-    targetPort: 80
+    targetPort: 8080
