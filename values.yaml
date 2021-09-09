@@ -1,4 +1,4 @@
 rollouts_test_app_image: 
     repository: omermishania
-    image: python-openshift-client-slim
-    tag: v1.0
+    image: argo-rollouts-test-app
+    tag: v1
