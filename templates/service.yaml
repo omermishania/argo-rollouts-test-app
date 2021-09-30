@@ -6,7 +6,7 @@ metadata:
     app: rollouts-test
 spec:
   ports:
-  - port: 8080
+  - port: 5000
     protocol: TCP
   selector:
     app: rollouts-test
