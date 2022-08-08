@@ -27,6 +27,9 @@ spec:
       containers:
       - name: rollouts-test-app
         image: "{{ .Values.rollouts_test_app_image.repository }}/{{ .Values.rollouts_test_app_image.image }}:{{ .Values.rollouts_test_app_image.tag }}"
+        envFrom:
+        - configMapRef:
+          name: rollouts-configmap
         ports:
         - name: http
           containerPort: 8080
