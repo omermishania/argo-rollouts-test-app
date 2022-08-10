@@ -2,6 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: rollouts-test
+  annotations:
+    reloader.stakater.com/auto: "true"
 spec:
   replicas: 3
   strategy:
