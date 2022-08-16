@@ -3,7 +3,7 @@ kind: Rollout
 metadata:
   name: rollouts-test
   annotations:
-    reloader.stakater.com/search: "true"
+    reloader.stakater.com/auto: "true"
 spec:
   replicas: 3
   strategy:
