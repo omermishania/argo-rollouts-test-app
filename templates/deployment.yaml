@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   annotations:
-    configmap.reloader.stakater.com/reload: rollouts-configmap
+    reloader.stakater.com/auto: "true"
   name: example
   namespace: default
 spec:
