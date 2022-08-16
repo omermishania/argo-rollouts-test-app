@@ -5,4 +5,4 @@ metadata:
   labels:
     app: rollouts-test
 data:
-  msg: "hellooooooooooooo world"
+  msg: "hello world"
