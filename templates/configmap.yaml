@@ -4,7 +4,5 @@ metadata:
   name: rollouts-configmap
   labels:
     app: rollouts-test
-  annotations:
-    reloader.stakater.com/match: "true"
 data:
   msg: "hellooooo world"
