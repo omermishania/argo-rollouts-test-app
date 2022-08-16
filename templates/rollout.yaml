@@ -3,7 +3,7 @@ kind: Rollout
 metadata:
   name: rollouts-test
   annotations:
-    configmap.reloader.stakater.com/reload: "rollouts-configmap"
+    configmap.reloader.stakater.com/reload: rollouts-configmap
 spec:
   replicas: 3
   strategy:
